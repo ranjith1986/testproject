@@ -13,7 +13,7 @@ pipeline {
     }
 
     environment {
-      PATH="C:\Program Files\Git\bin:$PATH"
+      PATH="/var/lib/jenkins/miniconda3/bin:$PATH"
     }
 
     stages {
@@ -27,11 +27,34 @@ pipeline {
         stage('Build environment') {
             steps {
                 echo "Building virtualenv"
-               
-            }
+                           }
         }
 
+        stage('Static code metrics') {
+            steps {
+                echo "Raw metrics"
+                
+                    '''
+            }
+            
+        }
+
+
+
         
+
+        
+
+    
+
+        // stage("Deploy to PyPI") {
+        //     steps {
+        //         sh """twine upload dist/*
+        //         """
+        //     }
+        // }
+    }
+
     post {
         always {
             sh 'conda remove --yes -n ${BUILD_TAG} --all'

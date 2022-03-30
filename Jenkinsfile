@@ -3,26 +3,25 @@ pipeline{
     stages{
         stage ('Build'){
             steps{
-                echo
-                'Running build'
+                echo 'Running build'
             }
         }
         stage ('Test'){
            steps{
-                echo
-                'Running Test'
+                echo 'Running Test'
+                
             } 
         }
         stage ('Deploy'){
            steps{
-                echo
-                'Running Deploy'
+                echo 'Running Deploy'
+             
             } 
         }
         stage ('Monitor'){
             steps{
-                echo
-                'Running monitor'
+                echo 'Running monitor'
+                
             }
         }
     } 
